@@ -1,0 +1,6 @@
+/* buttons/links */
+
+.btn {
+	@include button-reset;
+	background-color: transparent;
+}

@@ -8,10 +8,10 @@ import "./assets/scss/main.scss";
 
 function App() {
 	return (
-		<div className="address-book">
-			<main className="address-book__main">
-				<div className="address-book__list">
-					<Router>
+		<Router>
+			<div className="address-book">
+				<main className="address-book__main">
+					<div className="address-book__list">
 						<Switch>
 							<Route path="/add">
 								<Add />
@@ -23,11 +23,11 @@ function App() {
 								<List />
 							</Route>
 						</Switch>
-					</Router>
-				</div>
-			</main>
-			<Nav />
-		</div>
+					</div>
+				</main>
+				<Nav />
+			</div>
+		</Router>
 	);
 }
 

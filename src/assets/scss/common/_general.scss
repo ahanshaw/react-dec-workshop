@@ -24,10 +24,6 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: $black;
-
-	@include mobile {
-		background-color: $white;
-	}
 }
 
 h1 {

@@ -1,8 +1,11 @@
 import React from 'react';
 
 export function Nav({ parentCallback }) {
+
 	const updateLetter = (event) => {
-		parentCallback(event.target.innerText);
+		event.preventDefault();
+		const letter = event.target.innerText;
+		window.location.href = "/" + letter.toLowerCase();
 	}
 	
 	return (
@@ -34,7 +37,7 @@ export function Nav({ parentCallback }) {
 				<li><button className="btn" onClick={updateLetter}>X</button></li>
 				<li><button className="btn" onClick={updateLetter}>Y</button></li>
 				<li><button className="btn" onClick={updateLetter}>Z</button></li>
-				<li><button className="btn btn--add">+</button></li>
+				<li><a href="/add" className="btn btn--add">+</a></li>
 			</ul>
 		</nav>
 	)

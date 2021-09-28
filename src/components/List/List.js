@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
+import {useParams, Link} from 'react-router-dom';
 
 import { database } from '../../services/firebase';
 
-export function List({ letter }) {
+export function List() {
 	const [addresses, setAddresses] = useState('');
+	const {letter} = useParams();
 
 	useEffect(() => {
-		const currentLetter = letter.toLowerCase();
- 
 		if (letter) {
+			const currentLetter = letter.toLowerCase();
 			database.ref().once('value', function (snapshot) {
 				let addressArr = [];
 				snapshot.forEach(contact => {
@@ -19,37 +20,36 @@ export function List({ letter }) {
 				setAddresses(addressArr);
 			});
 		}
+		else {
+			setAddresses('');
+		}
 	}, [letter]);
 
 	if (!addresses){
         return (
-			<main className="address-book__main">
-				<div className="address-book__list">
-					<h1>Address Book</h1>
-				</div>
-			</main>
+			<>
+				<h1><Link to={`/`}>Address Book</Link></h1>
+			</>
         );
 	}
 	
 	return (
-		<main className="address-book__main">
-			<div className="address-book__list">
-				<h1>Address Book</h1>
-				{addresses.length < 1 &&
-					<p>Sorry, no addresses found.</p>
-				}
-				{addresses.map((address, index) => {
-					return (
-						<div className="address-book__item" key={index}>
-							<p>{address.first_name} {address.last_name}</p>
-							<p>{address.address}</p>
-							<p>{address.city}, {address.state} {address.zip}</p>
-							<p>{address.phone}</p>
-							<p>{address.email}</p>
-						</div>
-					)
-				})}
-			</div>
-		</main>
+		<>
+			<h1><Link to={`/`}>Address Book</Link></h1>
+			{addresses.length < 1 &&
+				<p>Sorry, no addresses found.</p>
+			}
+			{addresses.map((address, index) => {
+				return (
+					<div className="address-book__item" key={index}>
+						<p>{address.first_name} {address.last_name}</p>
+						<p>{address.address}</p>
+						<p>{address.city}, {address.state} {address.zip}</p>
+						<p>{address.phone}</p>
+						<p>{address.email}</p>
+					</div>
+				)
+			})}
+		</>
 	)
 }

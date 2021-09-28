@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export function Nav({ parentCallback }) {
+const Nav = () => {
 	
 	return (
 		<nav className="address-book__nav">
@@ -37,3 +37,5 @@ export function Nav({ parentCallback }) {
 		</nav>
 	)
 }
+
+export default Nav;

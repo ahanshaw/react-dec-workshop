@@ -3,7 +3,7 @@ import {useParams, Link} from 'react-router-dom';
 
 import { database } from '../../services/firebase';
 
-export function List() {
+const List = () => {
 	const [addresses, setAddresses] = useState('');
 	const {letter} = useParams();
 
@@ -53,3 +53,5 @@ export function List() {
 		</>
 	)
 }
+
+export default List;

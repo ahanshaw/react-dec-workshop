@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
 
-export function Add() {	
+const Add = () => {	
 	return (
 		<>
 			<div className="address-book__list">
@@ -11,3 +11,5 @@ export function Add() {
 		</>
 	)
 }
+
+export default Add;

@@ -23,6 +23,7 @@ const List = () => {
 		else {
 			setAddresses('');
 		}
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 	}, [letter]);
 
 	if (!addresses){

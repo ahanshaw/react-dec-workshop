@@ -42,7 +42,7 @@ h2 {
 
 p {
 	@include font-size(18);
-	@include line-height(20, 22);
+	@include line-height(20, 30);
 	letter-spacing: 0.5px;
 }
 

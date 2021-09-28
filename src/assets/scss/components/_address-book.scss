@@ -32,11 +32,11 @@
 				list-style: none;
 				text-align: center;
 				border-bottom: 1px solid $black;
-				transition: background-color 0.3s ease;
 
-				&:hover {
-					cursor: pointer;
-					background-color: $white;
+				&:last-of-type {
+					.btn {
+						border-radius: 0 0 10px 0;
+					}
 				}
 			}
 
@@ -52,7 +52,8 @@
 				padding: 0 10px;
 				text-decoration: underline;
 				text-decoration-color: transparent;
-				transition: text-decoration-color 0.3s ease;
+				transition: text-decoration-color 0.3s ease,
+					background-color 0.3s ease;
 
 				&::before {
 					position: absolute;
@@ -68,6 +69,11 @@
 					transform: translateY(-50%);
 				}
 
+				&:hover {
+					cursor: pointer;
+					background-color: $white;
+				}
+
 				&.selected {
 					background-color: $white;
 
@@ -80,6 +86,8 @@
 					@include font-size(20);
 					color: $white;
 					background-color: rgba($black, 0.75);
+					border-radius: 0 10px 0 0;
+					overflow: hidden;
 					transition: color 0.3s ease, background-color 0.3s ease;
 
 					&::before {

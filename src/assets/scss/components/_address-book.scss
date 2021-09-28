@@ -14,15 +14,12 @@
 	&__nav {
 		flex: 0 0 100px;
 		background-color: $black;
-		border: 1px solid $black;
-		border-left: 0;
 
 		@include mobile {
 			flex: 0 0 75px;
 		}
 
 		ul {
-			height: 100%;
 			margin: 0;
 			padding: 0;
 			background-color: rgba($white, 0.75);

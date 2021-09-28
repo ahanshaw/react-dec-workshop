@@ -5,6 +5,8 @@
 	max-width: 800px;
 	height: calc(100vh - 100px);
 	margin: 50px auto;
+	background-color: $white;
+	border-radius: 0 10px 10px 0;
 
 	@include mobile {
 		width: calc(100% - 20px);
@@ -20,7 +22,7 @@
 		border-radius: 0 10px 10px 0;
 
 		@include mobile {
-			flex: 0 0 50px;
+			flex: 0 0 75px;
 		}
 
 		ul {
@@ -106,7 +108,7 @@
 		border: 1px solid $black;
 
 		@include mobile {
-			flex: 0 0 calc(100% - 50px);
+			flex: 0 0 calc(100% - 75px);
 		}
 
 		h1 {
@@ -130,6 +132,10 @@
 	&__list {
 		height: 100%;
 		overflow: scroll;
+
+		.email {
+			word-break: break-all;
+		}
 	}
 
 	&__item {

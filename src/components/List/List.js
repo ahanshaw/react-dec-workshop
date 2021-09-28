@@ -46,7 +46,7 @@ const List = () => {
 						<p>{address.address}</p>
 						<p>{address.city}, {address.state} {address.zip}</p>
 						<p>{address.phone}</p>
-						<p>{address.email}</p>
+						<p className="email">{address.email}</p>
 					</div>
 				)
 			})}

@@ -148,4 +148,31 @@
 	&__item {
 		margin-bottom: 30px;
 	}
+
+	&__form {
+		padding-right: 20px;
+
+		p {
+			margin: 0 0 30px 0;
+		}
+
+		button {
+			@include button-reset;
+			height: 30px;
+			@include font-sans;
+			@include font-size(14);
+			line-height: 30px;
+			color: $white;
+			margin: 10px 0 0 0;
+			padding: 0 20px;
+			background-color: $black;
+			border: 1px solid $black;
+			transition: color 0.3s ease, background-color 0.3s ease;
+
+			&:hover {
+				color: $black;
+				background-color: rgba($black, 0.25);
+			}
+		}
+	}
 }

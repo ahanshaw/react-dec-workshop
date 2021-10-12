@@ -3,6 +3,8 @@ import {useParams, Link} from 'react-router-dom';
 
 import { database } from '../../services/firebase';
 
+import ListItem from "../ListItem/ListItem";
+
 const List = () => {
 	const [addresses, setAddresses] = useState('');
 	const {letter} = useParams();
@@ -50,15 +52,9 @@ const List = () => {
 			{addresses.length < 1 &&
 				<p>Sorry, no addresses found.</p>
 			}
-			{addresses.map((address, index) => {
+			{addresses.map((address) => {
 				return (
-					<div className="address-book__item" key={index}>
-						<p>{address.first_name} {address.last_name}</p>
-						<p>{address.address}</p>
-						<p>{address.city}, {address.state} {address.zip}</p>
-						<p>{address.phone}</p>
-						<p className="email">{address.email}</p>
-					</div>
+					<ListItem key={address.key} address={address} />
 				)
 			})}
 		</>

@@ -14,8 +14,18 @@ const List = () => {
 				let addressArr = [];
 				snapshot.forEach(contact => {
 					if (contact.val().last_name.toLowerCase().startsWith(currentLetter)) {
-						addressArr.push(contact.val());
-					}
+						addressArr.push({
+							key: contact.key,
+							first_name: contact.val().first_name,
+							last_name: contact.val().last_name,
+							address: contact.val().address,
+							city: contact.val().city,
+							state: contact.val().state,
+							zip: contact.val().zip,
+							email: contact.val().email,
+							phone: contact.val().phone
+						});
+				    }
 				});
 				setAddresses(addressArr);
 			});

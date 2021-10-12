@@ -69,7 +69,7 @@ const Add = () => {
 			<div className="address-book__form">
 				<h1><Link to={`/`}>Address Book</Link></h1>
 				<p>All fields are required.</p>
-				<form className="" onSubmit={e => e.preventDefault()}>
+				<form className="" onSubmit={(e) => onSubmit(e)}>
 					<fieldset>
 						<label htmlFor="first_name">First Name</label>
 						<input type="text" id="first_name" name="first_name" value={address.first_name} onChange={onChange} required />
@@ -102,7 +102,7 @@ const Add = () => {
 						<label htmlFor="email">Email</label>
 						<input type="email" id="email" name="email" value={address.email} onChange={onChange} required />
 					</fieldset>
-					<button className="btn btn--submit" type="submit" onClick={onSubmit}>Add Address</button>
+					<button className="btn btn--submit" type="submit">Add Address</button>
 				</form>
 			</div>
 		</>

@@ -14,7 +14,8 @@ const firebaseConfig = {
     
 const app = firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-const auth = app.auth()
+const auth = app.auth();
+auth.useEmulator('http://localhost:3001');
 
 export {
 	database,
